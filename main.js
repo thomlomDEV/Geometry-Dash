@@ -265,7 +265,7 @@ function update()
     collsionDetection();
 
     requestAnimationFrame(update);
-	setTimeout(update, 0);
+	//setTimeout(update, 0);
 
 }
 
