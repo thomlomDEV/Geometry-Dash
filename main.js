@@ -170,7 +170,7 @@ function update()
 		//console.log("FPS: " + fps);
     }
 
-    currentPosition += 3*dT;
+    currentPosition += 3.3*dT;
 	
     ctx.clearRect(0, 0, c.width, c.height);
 	
@@ -246,9 +246,9 @@ function update()
     }
     else
     {
-        if (playerAY > -2.5)
+        if (playerAY > -10)
         {
-            playerAY -= (0.13 * dT);
+            playerAY = (-0.6 * dT);
         }
     }
 
@@ -256,7 +256,7 @@ function update()
     {
         if (collidingBelow())
         {
-            playerAY = 1.12;
+            playerVY = 7;
         }
     }
 
@@ -298,16 +298,20 @@ function calculateGroundlevel()
 
 function updatePlayer()
 {
-    playerVY = playerVY + playerAY * dT;
-    if (playerVY > 10)
-    {
-        playerVY = 10;
-    }
-    else if (playerVY < -10)
-    {
-        playerVY = -10;
-    }
     playerY -= playerVY * dT;
+    playerVY += (playerAY * dT);
+
+    if (playerVY > 19)
+    {
+        console.log("100");
+        playerVY = 19;
+    }
+    else if (playerVY < -19)
+    {
+        console.log("-100");
+
+        playerVY = -19;
+    }
 }
 
 function collidingBelow()
