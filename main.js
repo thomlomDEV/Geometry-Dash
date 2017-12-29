@@ -167,14 +167,20 @@ function update()
         lastTimeCount = performance.now();
         fps = count;
         count = 0;
+		console.log("FPS: " + fps);
     }
 
-    currentPosition += 2.8;
-
+    currentPosition += 2.8*dT;
+	
     ctx.clearRect(0, 0, c.width, c.height);
+	
+	ctx.lineWidth=2;
+	
+	/*
     ctx.font = "12px Arial";
     ctx.fillStyle = "white";
     ctx.fillText("FPS: " + fps, 10, 10);
+*/
 
 	//Optimization. Create all squares before ctx.stroke();
 	ctx.beginPath();
@@ -259,6 +265,8 @@ function update()
     collsionDetection();
 
     requestAnimationFrame(update);
+	setTimeout(update, 0);
+
 }
 
 function calculateGroundlevel()
