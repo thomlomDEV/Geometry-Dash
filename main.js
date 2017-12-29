@@ -170,7 +170,7 @@ function update()
 		console.log("FPS: " + fps);
     }
 
-    currentPosition += 2.8*dT;
+    currentPosition += 3.5*dT;
 	
     ctx.clearRect(0, 0, c.width, c.height);
 	
@@ -245,7 +245,7 @@ function update()
     {
         if (playerAY > -2.5)
         {
-            playerAY -= (0.12 * dT);
+            playerAY -= (0.13 * dT);
         }
     }
 
@@ -253,7 +253,7 @@ function update()
     {
         if (collidingBelow())
         {
-            playerAY = 1.1;
+            playerAY = 1;
         }
     }
 
