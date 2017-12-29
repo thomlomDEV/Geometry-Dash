@@ -405,5 +405,18 @@ document.touchend = document.touchstart = function (e)
     //console.log("UP:" + map[38] + " DOWN:" + map[40] + " LEFT:" + map[39] + " RIGHT:" + map[37]);
 };
 
+document.addEventListener("touchstart", handleTouchStart, false);
+document.addEventListener("touchend", handleTouchEnd, false);
+
+function handleTouchStart(event)
+{
+	keyMap[32] = true;
+    return false;
+}
+function handleTouchEnd(event)
+{
+	keyMap[32] = false;
+    return false;
+}
 
 startGame();
