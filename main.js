@@ -167,7 +167,7 @@ function update()
         lastTimeCount = performance.now();
         fps = count;
         count = 0;
-		console.log("FPS: " + fps);
+		//console.log("FPS: " + fps);
     }
 
     currentPosition += 3*dT;
